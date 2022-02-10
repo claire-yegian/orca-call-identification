@@ -1,4 +1,7 @@
 #!usr/local/bin/python
+# CREDIT: https://programmerblog.net/join-wav-audio-files-using-python/
+# CREDIT: https://bbc.github.io/bbcat-orchestration-docs/installation-mac-manual/
+# CREDIT: https://www.ffmpeg.org/download.html
 import glob
 import sys
 import os
