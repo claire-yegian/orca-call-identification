@@ -2,6 +2,9 @@
 # CREDIT: https://programmerblog.net/join-wav-audio-files-using-python/
 # CREDIT: https://bbc.github.io/bbcat-orchestration-docs/installation-mac-manual/
 # CREDIT: https://www.ffmpeg.org/download.html
+
+# Pydub AudioSegment API: https://github.com/jiaaro/pydub/blob/master/API.markdown
+
 import glob
 import sys
 import os
