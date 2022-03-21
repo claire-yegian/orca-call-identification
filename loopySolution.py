@@ -2,6 +2,11 @@
 # CREDIT: https://programmerblog.net/join-wav-audio-files-using-python/
 # CREDIT: https://bbc.github.io/bbcat-orchestration-docs/installation-mac-manual/
 # CREDIT: https://www.ffmpeg.org/download.html
+
+# Useful AudioSegment APIs
+# https://github.com/jiaaro/pydub
+# https://github.com/jiaaro/pydub/blob/master/API.markdown
+
 import glob
 import sys
 import os
@@ -33,7 +38,11 @@ filenames = glob.glob(dirpathVocals+'*.wav')
 
 original = AudioSegment.from_wav(dirpathVocals+"A08-N17-082010-D072-14804.wav")
 print(len(original))
-addon = original
+addon = original[-200:][:150]
+addon2 = addon.reverse()
 combined = AudioSegment.empty()
-combined += addon
+combined = original + addon2 + addon
 combined.export(dirpathNewVocals+"loopedExample.wav", format="wav")
+
+awesome = combined.fade_out(400)
+awesome.export(dirpathNewVocals+"fadedLoopedEx.wav", format="wav")
